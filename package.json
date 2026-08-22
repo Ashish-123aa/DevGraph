@@ -1,0 +1,24 @@
+{
+  "name": "devgraph",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DevGraph - a graph-powered developer skill and career relationship explorer, backed by CognoDB.",
+  "scripts": {
+    "install:all": "npm install && npm --prefix client install && npm --prefix server install",
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "npm --prefix client run dev",
+    "dev:server": "npm --prefix server run dev",
+    "seed": "npm --prefix server run seed",
+    "build": "npm run build:server && npm run build:client",
+    "build:client": "npm --prefix client run build",
+    "build:server": "npm --prefix server run build",
+    "test": "npm --prefix server run test",
+    "lint": "npm --prefix server run lint && npm --prefix client run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
