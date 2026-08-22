@@ -20,8 +20,11 @@ The application is intentionally *not* a CRUD dashboard. Every primary feature i
 
 ## Demo
 
-[🚀 Live App](https://devgraph-ten.vercel.app)  
-[🎥 Screen Recording](https://drive.google.com/file/d/1b2NJsq_N6-2dHPWhgLSBdOUGTtOHYQtT/view?usp=drive_link)
+- **Live App:** [DevGraph](https://devgraph-ten.vercel.app)
+  https://devgraph-ten.vercel.app
+
+- **Screen Recording:** [Watch Demo](https://drive.google.com/file/d/1b2NJsq_N6-2dHPWhgLSBdOUGTtOHYQtT/view?usp=drive_link)
+  YOUR_SCREEN_RECORDING_LINK
 
 ## Screenshots
 
