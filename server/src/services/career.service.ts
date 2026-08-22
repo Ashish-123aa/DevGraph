@@ -74,36 +74,41 @@ export async function analyzeSkillGap(
     throw new ValidationError("knownSkills must be an array of skill names.");
   }
 
-  return withSession(async (session) => {
+  const roleExists = await withSession(async (session) => {
     const roleCheck = await session.run(`MATCH (r:JobRole {title: $role}) RETURN r`, { role });
-    if (roleCheck.records.length === 0) {
-      throw new NotFoundError(`Unknown job role "${role}".`);
-    }
-
-    const [gapResult, prereqResult] = await Promise.all([
-      session.run(SKILL_GAP, { knownSkills, role }),
-      session.run(SKILL_GAP_PREREQUISITES, { knownSkills, role }),
-    ]);
-
-    const gaps: SkillGapItem[] = gapResult.records.map((r) => {
-      const bridgeCount = r.get("bridgeCount") as number;
-      const props = r.get("props") as Record<string, unknown>;
-      const priority: "high" | "medium" = bridgeCount > 0 ? "high" : "medium";
-      const reason =
-        bridgeCount > 0
-          ? `Required by ${role}. Connected to ${bridgeCount} skill(s) you already know.`
-          : `Required by ${role}.`;
-      return { id: r.get("id"), props, priority, reason };
-    });
-
-    const prerequisiteGaps: PrerequisiteGapItem[] = prereqResult.records.map((r) => ({
-      id: r.get("id"),
-      props: r.get("props"),
-      unlocksSkill: r.get("unlocksSkill"),
-    }));
-
-    return { role, knownSkills, gaps, prerequisiteGaps };
+    return roleCheck.records.length > 0;
   });
+  if (!roleExists) {
+    throw new NotFoundError(`Unknown job role "${role}".`);
+  }
+
+  // A single neo4j Session can only have one query in flight at a time -
+  // running these concurrently means each needs its own session (drawn from
+  // the shared driver's connection pool), not two session.run() calls on
+  // the same session.
+  const [gapResult, prereqResult] = await Promise.all([
+    withSession((session) => session.run(SKILL_GAP, { knownSkills, role })),
+    withSession((session) => session.run(SKILL_GAP_PREREQUISITES, { knownSkills, role })),
+  ]);
+
+  const gaps: SkillGapItem[] = gapResult.records.map((r) => {
+    const bridgeCount = r.get("bridgeCount") as number;
+    const props = r.get("props") as Record<string, unknown>;
+    const priority: "high" | "medium" = bridgeCount > 0 ? "high" : "medium";
+    const reason =
+      bridgeCount > 0
+        ? `Required by ${role}. Connected to ${bridgeCount} skill(s) you already know.`
+        : `Required by ${role}.`;
+    return { id: r.get("id"), props, priority, reason };
+  });
+
+  const prerequisiteGaps: PrerequisiteGapItem[] = prereqResult.records.map((r) => ({
+    id: r.get("id"),
+    props: r.get("props"),
+    unlocksSkill: r.get("unlocksSkill"),
+  }));
+
+  return { role, knownSkills, gaps, prerequisiteGaps };
 }
 
 export interface SkillRecommendation {
