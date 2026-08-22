@@ -21,28 +21,36 @@ The application is intentionally *not* a CRUD dashboard. Every primary feature i
 ## Demo
 
 > Add your deployed URL and screen recording link here once deployed, e.g.:
-> - Live app: `https://devgraph.vercel.app`
+> - Live app: `https://devgraph-ten.vercel.app`
 > - Screen recording: `https://your-video-link`
 
 ## Screenshots
 
-Screenshots live in [`docs/screenshots/`](./docs/screenshots). Capture these once the UI is running:
+Screenshots live in [`docs/screenshots/`](./docs/screenshots).
 
-1. Dashboard / Graph Explorer
-2. Career Path
-3. Skill Gap Analyzer
-4. Project Explorer
-5. Company Explorer
-6. About / Why Graph page
+### 1. Dashboard / Graph Explorer
 
-```markdown
 ![Graph Explorer](./docs/screenshots/explore.png)
+
+### 2. Career Path
+
 ![Career Path](./docs/screenshots/career-path.png)
+
+### 3. Skill Gap Analyzer
+
 ![Skill Gap Analyzer](./docs/screenshots/skill-gap.png)
+
+### 4. Project Explorer
+
 ![Project Explorer](./docs/screenshots/projects.png)
+
+### 5. Company Explorer
+
 ![Company Explorer](./docs/screenshots/companies.png)
+
+### 6. About / Why Graph
+
 ![About / Why Graph](./docs/screenshots/about.png)
-```
 
 ## Features
 
@@ -423,7 +431,7 @@ COGNODB_PASSWORD=...
 CORS_ORIGIN=https://your-frontend-url
 ```
 
-Build command: `npm --prefix server run build` · Start command: `npm --prefix server start`
+Build command: `npm --prefix server install --include=dev && npm --prefix server run build` · Start command: `npm --prefix server start`
 
 **Frontend → Vercel (or any static host):**
 
@@ -462,4 +470,4 @@ Deploy the backend first, verify `GET /api/health` returns `{"status":"ok"}`, th
 
 ## License
 
-MIT - see [`LICENSE`](./LICENSE).
+Copyright (c) 2026 DevGraph Contributors
