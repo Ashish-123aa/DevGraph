@@ -20,9 +20,8 @@ The application is intentionally *not* a CRUD dashboard. Every primary feature i
 
 ## Demo
 
-> Add your deployed URL and screen recording link here once deployed, e.g.:
-> - Live app: `https://devgraph-ten.vercel.app`
-> - Screen recording: `https://your-video-link`
+[🚀 Live App](https://devgraph-ten.vercel.app)  
+[🎥 Screen Recording](https://drive.google.com/file/d/1b2NJsq_N6-2dHPWhgLSBdOUGTtOHYQtT/view?usp=drive_link)
 
 ## Screenshots
 
