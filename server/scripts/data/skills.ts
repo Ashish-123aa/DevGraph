@@ -55,4 +55,24 @@ export const skills: SkillSeed[] = [
   { id: "skill_automated_testing", name: "Automated Testing", category: "Testing", difficulty: "Intermediate", description: "Unit, integration, and end-to-end testing practices." },
   { id: "skill_performance_optimization", name: "Performance Optimization", category: "Testing", difficulty: "Advanced", description: "Profiling and improving application speed and resource use." },
   { id: "skill_security_fundamentals", name: "Security Fundamentals", category: "Security", difficulty: "Intermediate", description: "Common vulnerabilities and defensive coding practices." },
+
+  // --- Mobile ---
+  { id: "skill_mobile_development", name: "Mobile Development", category: "Mobile", difficulty: "Intermediate", description: "Core concepts shared across native and cross-platform mobile apps." },
+  { id: "skill_ios_development", name: "iOS Development", category: "Mobile", difficulty: "Intermediate", description: "Building native applications for Apple's iOS platform." },
+  { id: "skill_android_development", name: "Android Development", category: "Mobile", difficulty: "Intermediate", description: "Building native applications for the Android platform." },
+
+  // --- AI / ML ---
+  { id: "skill_ml_fundamentals", name: "Machine Learning Fundamentals", category: "AI/ML", difficulty: "Intermediate", description: "Core concepts of supervised and unsupervised learning." },
+  { id: "skill_deep_learning", name: "Deep Learning", category: "AI/ML", difficulty: "Advanced", description: "Neural network architectures for vision, language, and beyond." },
+  { id: "skill_nlp", name: "Natural Language Processing", category: "AI/ML", difficulty: "Advanced", description: "Techniques for processing and understanding human language." },
+  { id: "skill_statistics_probability", name: "Statistics & Probability", category: "AI/ML", difficulty: "Intermediate", description: "The mathematical foundation behind data analysis and ML." },
+  { id: "skill_data_visualization", name: "Data Visualization", category: "Data", difficulty: "Intermediate", description: "Communicating data clearly through charts and visual encoding." },
+
+  // --- Architecture / Process ---
+  { id: "skill_caching_strategies", name: "Caching Strategies", category: "Backend", difficulty: "Intermediate", description: "Techniques for reducing load and latency with caching layers." },
+  { id: "skill_event_driven_architecture", name: "Event-Driven Architecture", category: "Backend", difficulty: "Advanced", description: "Designing systems that communicate through asynchronous events." },
+  { id: "skill_serverless_architecture", name: "Serverless Architecture", category: "Cloud", difficulty: "Advanced", description: "Building systems on managed, auto-scaling compute platforms." },
+  { id: "skill_networking_fundamentals", name: "Networking Fundamentals", category: "Fundamentals", difficulty: "Beginner", description: "How data moves across networks: DNS, TCP/IP, HTTP, and beyond." },
+  { id: "skill_agile_scrum", name: "Agile & Scrum", category: "Fundamentals", difficulty: "Beginner", description: "Iterative planning and delivery practices used by engineering teams." },
+  { id: "skill_ui_ux_principles", name: "UI/UX Design Principles", category: "Frontend", difficulty: "Beginner", description: "Foundational principles behind usable, intuitive interfaces." },
 ];

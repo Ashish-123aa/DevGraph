@@ -2,7 +2,7 @@
 
 **Explore the connections between skills, technologies, projects, companies and careers.**
 
-DevGraph is a graph-powered developer skill and career relationship explorer, backed by **CognoDB** - a managed graph database that speaks openCypher over Bolt and is compatible with the official Neo4j drivers. It was built to satisfy the Wexa AI Candidate Take-Home Assignment.
+DevGraph is a graph-powered developer skill and career relationship explorer, backed by **CognoDB** - a managed graph database that speaks openCypher over Bolt and is compatible with the official Neo4j drivers.
 
 ---
 
@@ -255,7 +255,7 @@ companies, company_technologies, ...
 
 ...plus a join across every one of those junction tables, and a *different* query for a 2-hop path than for a 5-hop path, because SQL has no native concept of "however many joins it takes." Every time a new relationship type is added (say, `Resource TEACHES Skill`), it's a new table and a new join to retrofit into every relevant query.
 
-In CognoDB, the same relationships are stored directly as typed edges, and the traversal depth is a query parameter (`*1..4`) rather than a schema decision. This is the query explicitly called out by the assignment as awkward in a relational database - see [`server/queries/career.cypher.ts`](./server/queries/career.cypher.ts) for the full implementation.
+In CognoDB, the same relationships are stored directly as typed edges, and the traversal depth is a query parameter (`*1..4`) rather than a schema decision. see [`server/queries/career.cypher.ts`](./server/queries/career.cypher.ts) for the full implementation.
 
 ## Tech Stack
 
@@ -459,7 +459,7 @@ Deploy the backend first, verify `GET /api/health` returns `{"status":"ok"}`, th
 - **A dedicated `queries/` directory, separate from `services/`.** Keeps every Cypher statement reviewable in one place, with the "why" documented alongside the "what" - important for a query-heavy app like this one.
 - **Depth and node-count caps on graph exploration** (`MAX_EXPLORE_DEPTH = 2`, `MAX_EXPLORE_NODES = 100`), because CognoDB's free tier has limited resources and an unbounded traversal from a hub node could return most of the graph.
 - **One ontology color per node type**, defined once (`client/src/utils/entityVisuals.ts`) and reused in the nav, badges, the graph itself, and the stats chart, rather than styling each screen independently.
-- **Developer relationships are generated from a small set of "tracks"** (`server/scripts/data/developerTracks.ts`) rather than hand-writing 20 developers' worth of individual relationships, while every skill/technology/project/role/company relationship is hand-curated - the assignment's "no meaningless relationships" requirement matters most for the graph's semantic structure, not for which specific developer happens to know React.
+- **Developer relationships are generated from a small set of "tracks"** (`server/scripts/data/developerTracks.ts`) rather than hand-writing 20 developers' worth of individual relationships, while every skill/technology/project/role/company relationship is hand-curated to keep the graph's semantic structure meaningful, rather than focusing on which specific developer happens to know React.
 - **Zod validation at the route boundary**, not scattered through services, so every endpoint's accepted shape is visible in one file per resource.
 
 ## Future Improvements
@@ -468,7 +468,7 @@ Deploy the backend first, verify `GET /api/health` returns `{"status":"ok"}`, th
 - Cache expensive multi-hop queries (career paths, recommendations) with a short TTL.
 - Add pagination cursors to `/api/graph/explore` instead of a flat `limit`.
 - Add an admin view for editing seed data without redeploying the seed script.
-- Expand seed data toward the assignment's upper targets (30-50 developers, 40-60 skills, etc.) using the same hand-curated relationship pattern.
+- Expand seed data toward larger developer, skill, and technology datasets using the same hand-curated relationship pattern.
 
 ## License
 

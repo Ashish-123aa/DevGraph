@@ -109,6 +109,33 @@ export const trackProfiles: Record<DeveloperTrack, TrackProfile> = {
     technologies: ["tech_postgresql", "tech_kafka", "tech_elasticsearch", "tech_aws"],
     projects: ["project_social_analytics", "project_weather_pipeline"],
   },
+  mobile: {
+    skills: [
+      "skill_programming_fundamentals",
+      "skill_git",
+      "skill_oop_design",
+      "skill_mobile_development",
+      "skill_ios_development",
+      "skill_android_development",
+      "skill_ui_ux_principles",
+    ],
+    technologies: ["tech_swift", "tech_kotlin", "tech_flutter", "tech_react_native"],
+    projects: ["project_mobile_banking", "project_ios_fitness_companion", "project_cross_platform_notes"],
+  },
+  ml_engineer: {
+    skills: [
+      "skill_programming_fundamentals",
+      "skill_python",
+      "skill_sql",
+      "skill_data_structures",
+      "skill_statistics_probability",
+      "skill_ml_fundamentals",
+      "skill_deep_learning",
+      "skill_nlp",
+    ],
+    technologies: ["tech_tensorflow", "tech_pytorch", "tech_scikit_learn", "tech_postgresql"],
+    projects: ["project_ml_recommendation_engine", "project_sentiment_analysis"],
+  },
 };
 
 const TRIMMED_SIZE = { skills: 4, technologies: 2, projects: 1 };

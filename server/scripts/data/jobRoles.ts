@@ -17,4 +17,13 @@ export const jobRoles: JobRoleSeed[] = [
   { id: "role_sre", title: "Site Reliability Engineer", level: "Senior", description: "Keeps production systems reliable, observable, and performant at scale.", salaryRange: "$110,000 - $175,000" },
   { id: "role_platform_engineer", title: "Platform Engineer", level: "Senior", description: "Builds the internal tooling and infrastructure other engineers build on.", salaryRange: "$105,000 - $170,000" },
   { id: "role_qa_automation_engineer", title: "QA Automation Engineer", level: "Mid", description: "Designs and maintains automated test suites and quality processes.", salaryRange: "$80,000 - $130,000" },
+
+  { id: "role_mobile_engineer", title: "Mobile Engineer", level: "Mid", description: "Builds native or cross-platform mobile applications.", salaryRange: "$90,000 - $150,000" },
+  { id: "role_ml_engineer", title: "Machine Learning Engineer", level: "Senior", description: "Builds and deploys machine learning models in production systems.", salaryRange: "$110,000 - $180,000" },
+  { id: "role_data_scientist", title: "Data Scientist", level: "Mid", description: "Analyzes data and builds models to answer business questions.", salaryRange: "$95,000 - $160,000" },
+  { id: "role_solutions_architect", title: "Solutions Architect", level: "Senior", description: "Designs end-to-end technical solutions across teams and systems.", salaryRange: "$115,000 - $180,000" },
+  { id: "role_engineering_manager", title: "Engineering Manager", level: "Senior", description: "Leads an engineering team's delivery, growth, and technical direction.", salaryRange: "$130,000 - $190,000" },
+  { id: "role_technical_writer", title: "Technical Writer", level: "Mid", description: "Creates clear documentation for developers and end users.", salaryRange: "$75,000 - $120,000" },
+  { id: "role_product_engineer", title: "Product Engineer", level: "Mid", description: "Works closely with product teams to ship user-facing features end to end.", salaryRange: "$90,000 - $150,000" },
+  { id: "role_security_engineer", title: "Security Engineer", level: "Senior", description: "Protects systems and data through secure design and threat mitigation.", salaryRange: "$110,000 - $175,000" },
 ];

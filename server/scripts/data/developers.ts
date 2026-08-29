@@ -5,7 +5,9 @@ export type DeveloperTrack =
   | "frontend_react"
   | "fullstack"
   | "devops"
-  | "data_engineer";
+  | "data_engineer"
+  | "mobile"
+  | "ml_engineer";
 
 export interface DeveloperSeed {
   id: string;
@@ -38,4 +40,121 @@ export const developers: DeveloperSeed[] = [
   { id: "dev_018", name: "Hannah Müller", experienceLevel: "Advanced", location: "Berlin, Germany", bio: "Senior software engineer with a focus on distributed systems.", track: "backend_java" },
   { id: "dev_019", name: "Ravi Kumar", experienceLevel: "Intermediate", location: "Chennai, India", bio: "Frontend engineer specializing in React performance.", track: "frontend_react" },
   { id: "dev_020", name: "Chloe Dubois", experienceLevel: "Beginner", location: "Paris, France", bio: "Bootcamp graduate starting a career in full stack development.", track: "fullstack" },
+  ...generateDevelopers(280, 20),
 ];
+
+/**
+ * The 20 developers above are hand-written for flavor and used in examples
+ * elsewhere. The rest are generated deterministically from realistic
+ * name/location pools, cycling evenly through every track (including the
+ * newer "mobile" and "ml_engineer" tracks) and every experience level, so
+ * the graph has enough Developer nodes - and enough KNOWS/USES/BUILT
+ * relationships - to visualize meaningfully without hand-authoring
+ * hundreds of individual bios. Every generated developer still gets a
+ * coherent, logical set of relationships via relationshipsForDeveloper()
+ * in developerTracks.ts - nothing here is random or meaningless, only the
+ * name/location/bio flavor text is templated.
+ */
+function generateDevelopers(count: number, startIndex: number): DeveloperSeed[] {
+  const FIRST_NAMES = [
+    "Liam", "Olivia", "Noah", "Emma", "Arjun", "Sofia", "Kenji", "Mia", "Diego", "Zara",
+    "Wei", "Ingrid", "Karim", "Yuki", "Elena", "Tariq", "Anika", "Mateo", "Nadia", "Felix",
+    "Amara", "Hiro", "Leila", "Bruno", "Sana", "Oscar", "Priyanka", "Luca", "Chidi", "Freya",
+    "Jamal", "Ines", "Kwame", "Mira", "Santiago", "Aiko", "Rafael", "Layla", "Dmitri", "Chiara",
+    "Malik", "Petra", "Ahmad", "Naomi", "Viktor", "Amina", "Theo", "Sakura", "Emeka", "Lucia",
+  ];
+  const LAST_NAMES = [
+    "Johansson", "Silva", "Patel", "Kowalski", "Yamamoto", "Ndiaye", "Fernandez", "Novak", "Haddad", "Rossi",
+    "Kim", "Andersen", "Popescu", "Osei", "Ivanov", "Costa", "Nakamura", "Hassan", "Dubois", "Lindqvist",
+    "Almeida", "Choi", "Baptiste", "Wojcik", "Farooq", "Moreau", "Sato", "Adeyemi", "Petrov", "Karlsson",
+    "Mendes", "Okafor", "Lindgren", "Botha", "Suzuki", "Rahman", "Kovac", "Larsen", "Diallo", "Cruz",
+    "Berg", "Nakagawa", "Schmidt", "Ojo", "Volkov", "Marchetti", "Hoang", "Reyes", "Eriksson", "Abara",
+  ];
+  const LOCATIONS = [
+    "Bangalore, India", "Singapore", "Dublin, Ireland", "Warsaw, Poland", "Nairobi, Kenya",
+    "Mexico City, Mexico", "Jakarta, Indonesia", "Lagos, Nigeria", "Stockholm, Sweden", "Ho Chi Minh City, Vietnam",
+    "Buenos Aires, Argentina", "Amsterdam, Netherlands", "Tel Aviv, Israel", "Manila, Philippines", "Nairobi, Kenya",
+    "Krakow, Poland", "Vancouver, Canada", "Austin, USA", "Melbourne, Australia", "Barcelona, Spain",
+    "Lisbon, Portugal", "Zurich, Switzerland", "Bangkok, Thailand", "Accra, Ghana", "Bucharest, Romania",
+    "Prague, Czechia", "Kuala Lumpur, Malaysia", "Cape Town, South Africa", "Helsinki, Finland", "Auckland, New Zealand",
+  ];
+  const EXPERIENCE_LEVELS: DeveloperSeed["experienceLevel"][] = [
+    "Beginner",
+    "Intermediate",
+    "Intermediate",
+    "Advanced",
+    "Advanced",
+    "Expert",
+  ];
+  const TRACKS: DeveloperTrack[] = [
+    "backend_java",
+    "backend_node",
+    "backend_python",
+    "frontend_react",
+    "fullstack",
+    "devops",
+    "data_engineer",
+    "mobile",
+    "ml_engineer",
+  ];
+  const BIO_TEMPLATES: Record<DeveloperTrack, string[]> = {
+    backend_java: [
+      "Backend engineer focused on building reliable Java services.",
+      "Enjoys designing clean APIs and well-tested backend systems.",
+    ],
+    backend_node: [
+      "Node.js developer who likes building fast, async services.",
+      "Backend engineer working mostly in the Node.js ecosystem.",
+    ],
+    backend_python: [
+      "Python developer building APIs and data-facing services.",
+      "Backend engineer with a preference for Python tooling.",
+    ],
+    frontend_react: [
+      "Frontend engineer who cares about accessible, polished UI.",
+      "React developer focused on performant, maintainable interfaces.",
+    ],
+    fullstack: [
+      "Full stack developer comfortable owning a feature end to end.",
+      "Generalist engineer who moves fluidly between frontend and backend.",
+    ],
+    devops: [
+      "DevOps engineer focused on reliable, automated infrastructure.",
+      "Platform-minded engineer who enjoys CI/CD and observability work.",
+    ],
+    data_engineer: [
+      "Data engineer building pipelines that keep analytics teams unblocked.",
+      "Enjoys designing resilient data ingestion and storage systems.",
+    ],
+    mobile: [
+      "Mobile engineer building native and cross-platform apps.",
+      "Focused on smooth, responsive mobile user experiences.",
+    ],
+    ml_engineer: [
+      "ML engineer who enjoys turning data into deployed models.",
+      "Works at the intersection of data science and production systems.",
+    ],
+  };
+
+  const generated: DeveloperSeed[] = [];
+  for (let i = 0; i < count; i++) {
+    const globalIndex = startIndex + i;
+    const firstName = FIRST_NAMES[globalIndex % FIRST_NAMES.length]!;
+    const lastName = LAST_NAMES[(globalIndex * 7 + 3) % LAST_NAMES.length]!;
+    const location = LOCATIONS[(globalIndex * 5 + 1) % LOCATIONS.length]!;
+    const experienceLevel = EXPERIENCE_LEVELS[globalIndex % EXPERIENCE_LEVELS.length]!;
+    const track = TRACKS[globalIndex % TRACKS.length]!;
+    const bios = BIO_TEMPLATES[track];
+    const bio = bios[globalIndex % bios.length]!;
+
+    generated.push({
+      id: `dev_${String(globalIndex + 1).padStart(3, "0")}`,
+      name: `${firstName} ${lastName}`,
+      experienceLevel,
+      location,
+      bio,
+      track,
+    });
+  }
+  return generated;
+}

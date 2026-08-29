@@ -34,4 +34,24 @@ export const technologies: TechnologySeed[] = [
   { id: "tech_vite", name: "Vite", category: "Build Tool", description: "A fast frontend build tool and dev server." },
   { id: "tech_jest", name: "Jest", category: "Testing Tool", description: "A JavaScript testing framework." },
   { id: "tech_nginx", name: "Nginx", category: "Infrastructure", description: "A web server, reverse proxy, and load balancer." },
+
+  // --- Mobile ---
+  { id: "tech_swift", name: "Swift", category: "Mobile", description: "Apple's programming language for iOS and macOS development." },
+  { id: "tech_kotlin", name: "Kotlin", category: "Mobile", description: "A modern language for Android development, interoperable with Java." },
+  { id: "tech_flutter", name: "Flutter", category: "Mobile", description: "Google's cross-platform UI toolkit for building native mobile apps." },
+  { id: "tech_react_native", name: "React Native", category: "Mobile", description: "A framework for building native mobile apps using React." },
+
+  // --- AI / ML ---
+  { id: "tech_tensorflow", name: "TensorFlow", category: "AI/ML", description: "An open-source platform for building and training ML models." },
+  { id: "tech_pytorch", name: "PyTorch", category: "AI/ML", description: "A flexible deep learning framework popular in research and production." },
+  { id: "tech_scikit_learn", name: "Scikit-learn", category: "AI/ML", description: "A Python library for classical machine learning algorithms." },
+
+  // --- Cloud / Serverless / APIs ---
+  { id: "tech_cloudflare_workers", name: "Cloudflare Workers", category: "Cloud", description: "A serverless platform for running code at the network edge." },
+  { id: "tech_aws_lambda", name: "AWS Lambda", category: "Cloud", description: "AWS's serverless, event-driven compute service." },
+  { id: "tech_grpc", name: "gRPC", category: "Backend Framework", description: "A high-performance RPC framework for service-to-service communication." },
+
+  // --- Testing ---
+  { id: "tech_cypress", name: "Cypress", category: "Testing Tool", description: "An end-to-end testing framework for web applications." },
+  { id: "tech_playwright", name: "Playwright", category: "Testing Tool", description: "A cross-browser end-to-end testing and automation framework." },
 ];

@@ -17,4 +17,13 @@ export const companies: CompanySeed[] = [
   { id: "company_stripe", name: "Stripe", industry: "Fintech / Payments", location: "San Francisco, CA", description: "A payments infrastructure company powering online commerce." },
   { id: "company_uber", name: "Uber", industry: "Mobility & Delivery", location: "San Francisco, CA", description: "A ride-hailing and delivery platform operating at global real-time scale." },
   { id: "company_spotify", name: "Spotify", industry: "Music Streaming", location: "Stockholm, Sweden", description: "A global audio streaming platform." },
+
+  { id: "company_meta", name: "Meta", industry: "Social Media & VR", location: "Menlo Park, CA", description: "The company behind Facebook, Instagram, and Reality Labs." },
+  { id: "company_apple", name: "Apple", industry: "Consumer Electronics & Software", location: "Cupertino, CA", description: "A technology company known for iPhone, Mac, and iOS/macOS software." },
+  { id: "company_salesforce", name: "Salesforce", industry: "Enterprise SaaS", location: "San Francisco, CA", description: "A leading customer relationship management (CRM) platform." },
+  { id: "company_shopify", name: "Shopify", industry: "E-Commerce Platform", location: "Ottawa, Canada", description: "A platform powering online storefronts for merchants worldwide." },
+  { id: "company_airbnb", name: "Airbnb", industry: "Travel & Hospitality", location: "San Francisco, CA", description: "A marketplace connecting travelers with unique places to stay." },
+  { id: "company_linkedin", name: "LinkedIn", industry: "Professional Networking", location: "Sunnyvale, CA", description: "A professional networking and job-search platform." },
+  { id: "company_twilio", name: "Twilio", industry: "Communications APIs", location: "San Francisco, CA", description: "A cloud platform providing programmable messaging and voice APIs." },
+  { id: "company_snowflake", name: "Snowflake", industry: "Data Cloud", location: "Bozeman, MT", description: "A cloud-based data warehousing and analytics platform." },
 ];

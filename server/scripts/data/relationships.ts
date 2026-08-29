@@ -31,6 +31,20 @@ export const skillRelatedTo: [string, string][] = [
   ["skill_go", "skill_microservices"],
   ["skill_system_design", "skill_microservices"],
   ["skill_system_design", "skill_message_queues"],
+
+  // --- Mobile / AI-ML / Architecture additions ---
+  ["skill_mobile_development", "skill_ios_development"],
+  ["skill_mobile_development", "skill_android_development"],
+  ["skill_ml_fundamentals", "skill_deep_learning"],
+  ["skill_ml_fundamentals", "skill_statistics_probability"],
+  ["skill_deep_learning", "skill_nlp"],
+  ["skill_data_visualization", "skill_statistics_probability"],
+  ["skill_caching_strategies", "skill_performance_optimization"],
+  ["skill_event_driven_architecture", "skill_message_queues"],
+  ["skill_serverless_architecture", "skill_cloud_fundamentals"],
+  ["skill_networking_fundamentals", "skill_security_fundamentals"],
+  ["skill_ui_ux_principles", "skill_accessibility"],
+  ["skill_agile_scrum", "skill_system_design"],
 ];
 
 // --- Skill -> Skill : PREREQUISITE_FOR (forms learning chains) ---
@@ -60,6 +74,20 @@ export const skillPrerequisiteFor: [string, string][] = [
   ["skill_algorithms", "skill_performance_optimization"],
   ["skill_rest_apis", "skill_graphql"],
   ["skill_python", "skill_data_pipelines"],
+
+  // --- Mobile / AI-ML additions ---
+  ["skill_programming_fundamentals", "skill_mobile_development"],
+  ["skill_oop_design", "skill_ios_development"],
+  ["skill_oop_design", "skill_android_development"],
+  ["skill_python", "skill_ml_fundamentals"],
+  ["skill_statistics_probability", "skill_ml_fundamentals"],
+  ["skill_ml_fundamentals", "skill_deep_learning"],
+  ["skill_deep_learning", "skill_nlp"],
+  ["skill_data_structures", "skill_statistics_probability"],
+  ["skill_rest_apis", "skill_event_driven_architecture"],
+  ["skill_cloud_fundamentals", "skill_serverless_architecture"],
+  ["skill_git", "skill_agile_scrum"],
+  ["skill_html_css", "skill_ui_ux_principles"],
 ];
 
 // --- Skill -> Technology : ENABLES ---
@@ -91,6 +119,20 @@ export const skillEnablesTechnology: [string, string][] = [
   ["skill_automated_testing", "tech_jest"],
   ["skill_graphql", "tech_express"],
   ["skill_react_dev", "tech_nextjs"],
+
+  // --- Mobile / AI-ML / Cloud / Testing additions ---
+  ["skill_ios_development", "tech_swift"],
+  ["skill_android_development", "tech_kotlin"],
+  ["skill_mobile_development", "tech_flutter"],
+  ["skill_mobile_development", "tech_react_native"],
+  ["skill_ml_fundamentals", "tech_scikit_learn"],
+  ["skill_deep_learning", "tech_tensorflow"],
+  ["skill_deep_learning", "tech_pytorch"],
+  ["skill_serverless_architecture", "tech_aws_lambda"],
+  ["skill_serverless_architecture", "tech_cloudflare_workers"],
+  ["skill_microservices", "tech_grpc"],
+  ["skill_automated_testing", "tech_cypress"],
+  ["skill_automated_testing", "tech_playwright"],
 ];
 
 // --- Technology -> Technology : COMPLEMENTS ---
@@ -112,6 +154,16 @@ export const technologyComplements: [string, string][] = [
   ["tech_nginx", "tech_docker"],
   ["tech_jest", "tech_react"],
   ["tech_github_actions", "tech_docker"],
+
+  // --- Mobile / AI-ML additions ---
+  ["tech_react_native", "tech_react"],
+  ["tech_flutter", "tech_kotlin"],
+  ["tech_tensorflow", "tech_pytorch"],
+  ["tech_pytorch", "tech_scikit_learn"],
+  ["tech_aws_lambda", "tech_aws"],
+  ["tech_cloudflare_workers", "tech_grpc"],
+  ["tech_cypress", "tech_playwright"],
+  ["tech_grpc", "tech_kubernetes"],
 ];
 
 // --- Skill -> JobRole : REQUIRED_FOR ---
@@ -171,6 +223,43 @@ export const skillRequiredForRole: [string, string][] = [
   ["skill_automated_testing", "role_qa_automation_engineer"],
   ["skill_performance_optimization", "role_qa_automation_engineer"],
   ["skill_rest_apis", "role_qa_automation_engineer"],
+
+  ["skill_mobile_development", "role_mobile_engineer"],
+  ["skill_ios_development", "role_mobile_engineer"],
+  ["skill_android_development", "role_mobile_engineer"],
+  ["skill_ui_ux_principles", "role_mobile_engineer"],
+
+  ["skill_ml_fundamentals", "role_ml_engineer"],
+  ["skill_deep_learning", "role_ml_engineer"],
+  ["skill_python", "role_ml_engineer"],
+  ["skill_data_pipelines", "role_ml_engineer"],
+
+  ["skill_statistics_probability", "role_data_scientist"],
+  ["skill_ml_fundamentals", "role_data_scientist"],
+  ["skill_data_visualization", "role_data_scientist"],
+  ["skill_python", "role_data_scientist"],
+
+  ["skill_system_design", "role_solutions_architect"],
+  ["skill_cloud_fundamentals", "role_solutions_architect"],
+  ["skill_microservices", "role_solutions_architect"],
+  ["skill_event_driven_architecture", "role_solutions_architect"],
+
+  ["skill_system_design", "role_engineering_manager"],
+  ["skill_agile_scrum", "role_engineering_manager"],
+  ["skill_oop_design", "role_engineering_manager"],
+
+  ["skill_rest_apis", "role_technical_writer"],
+  ["skill_agile_scrum", "role_technical_writer"],
+
+  ["skill_react_dev", "role_product_engineer"],
+  ["skill_ui_ux_principles", "role_product_engineer"],
+  ["skill_agile_scrum", "role_product_engineer"],
+  ["skill_rest_apis", "role_product_engineer"],
+
+  ["skill_security_fundamentals", "role_security_engineer"],
+  ["skill_networking_fundamentals", "role_security_engineer"],
+  ["skill_auth", "role_security_engineer"],
+  ["skill_cloud_fundamentals", "role_security_engineer"],
 ];
 
 // --- Technology -> JobRole : COMMONLY_USED_IN ---
@@ -212,6 +301,23 @@ export const technologyCommonlyUsedInRole: [string, string][] = [
   ["tech_github_actions", "role_platform_engineer"],
 
   ["tech_jest", "role_qa_automation_engineer"],
+
+  ["tech_swift", "role_mobile_engineer"],
+  ["tech_kotlin", "role_mobile_engineer"],
+  ["tech_flutter", "role_mobile_engineer"],
+  ["tech_react_native", "role_mobile_engineer"],
+
+  ["tech_tensorflow", "role_ml_engineer"],
+  ["tech_pytorch", "role_ml_engineer"],
+
+  ["tech_scikit_learn", "role_data_scientist"],
+  ["tech_postgresql", "role_data_scientist"],
+
+  ["tech_aws", "role_solutions_architect"],
+  ["tech_grpc", "role_solutions_architect"],
+  ["tech_kubernetes", "role_solutions_architect"],
+
+  ["tech_aws_lambda", "role_security_engineer"],
 ];
 
 // --- Project -> Skill : DEMONSTRATES ---
@@ -282,6 +388,40 @@ export const projectDemonstratesSkill: [string, string][] = [
 
   ["project_log_monitoring", "skill_observability"],
   ["project_log_monitoring", "skill_performance_optimization"],
+
+  ["project_mobile_banking", "skill_mobile_development"],
+  ["project_mobile_banking", "skill_security_fundamentals"],
+  ["project_mobile_banking", "skill_auth"],
+
+  ["project_ios_fitness_companion", "skill_ios_development"],
+  ["project_ios_fitness_companion", "skill_ui_ux_principles"],
+
+  ["project_cross_platform_notes", "skill_mobile_development"],
+  ["project_cross_platform_notes", "skill_ui_ux_principles"],
+
+  ["project_ml_recommendation_engine", "skill_ml_fundamentals"],
+  ["project_ml_recommendation_engine", "skill_python"],
+  ["project_ml_recommendation_engine", "skill_data_pipelines"],
+
+  ["project_sentiment_analysis", "skill_nlp"],
+  ["project_sentiment_analysis", "skill_python"],
+
+  ["project_data_viz_dashboard", "skill_data_visualization"],
+  ["project_data_viz_dashboard", "skill_statistics_probability"],
+
+  ["project_serverless_image_pipeline", "skill_serverless_architecture"],
+  ["project_serverless_image_pipeline", "skill_cloud_fundamentals"],
+
+  ["project_event_driven_orders", "skill_event_driven_architecture"],
+  ["project_event_driven_orders", "skill_message_queues"],
+  ["project_event_driven_orders", "skill_microservices"],
+
+  ["project_api_gateway", "skill_microservices"],
+  ["project_api_gateway", "skill_security_fundamentals"],
+  ["project_api_gateway", "skill_system_design"],
+
+  ["project_multiplayer_game_backend", "skill_system_design"],
+  ["project_multiplayer_game_backend", "skill_message_queues"],
 ];
 
 // --- Technology -> Project : USED_IN ---
@@ -348,6 +488,21 @@ export const technologyUsedInProject: [string, string][] = [
   ["tech_prometheus", "project_log_monitoring"],
   ["tech_grafana", "project_log_monitoring"],
   ["tech_elasticsearch", "project_log_monitoring"],
+
+  ["tech_swift", "project_mobile_banking"],
+  ["tech_swift", "project_ios_fitness_companion"],
+  ["tech_flutter", "project_cross_platform_notes"],
+  ["tech_tensorflow", "project_ml_recommendation_engine"],
+  ["tech_pytorch", "project_sentiment_analysis"],
+  ["tech_elasticsearch", "project_data_viz_dashboard"],
+  ["tech_aws_lambda", "project_serverless_image_pipeline"],
+  ["tech_cloudflare_workers", "project_serverless_image_pipeline"],
+  ["tech_kafka", "project_event_driven_orders"],
+  ["tech_postgresql", "project_event_driven_orders"],
+  ["tech_grpc", "project_api_gateway"],
+  ["tech_kubernetes", "project_api_gateway"],
+  ["tech_redis", "project_multiplayer_game_backend"],
+  ["tech_kafka", "project_multiplayer_game_backend"],
 ];
 
 // --- Project -> JobRole : RELEVANT_TO ---
@@ -375,6 +530,20 @@ export const projectRelevantToRole: [string, string][] = [
   ["project_weather_pipeline", "role_data_engineer"],
   ["project_log_monitoring", "role_sre"],
   ["project_log_monitoring", "role_devops_engineer"],
+
+  ["project_mobile_banking", "role_mobile_engineer"],
+  ["project_ios_fitness_companion", "role_mobile_engineer"],
+  ["project_cross_platform_notes", "role_mobile_engineer"],
+  ["project_ml_recommendation_engine", "role_ml_engineer"],
+  ["project_ml_recommendation_engine", "role_data_scientist"],
+  ["project_sentiment_analysis", "role_ml_engineer"],
+  ["project_data_viz_dashboard", "role_data_scientist"],
+  ["project_serverless_image_pipeline", "role_cloud_engineer"],
+  ["project_event_driven_orders", "role_backend_engineer"],
+  ["project_event_driven_orders", "role_solutions_architect"],
+  ["project_api_gateway", "role_solutions_architect"],
+  ["project_api_gateway", "role_backend_engineer"],
+  ["project_multiplayer_game_backend", "role_backend_engineer"],
 ];
 
 // --- Company -> JobRole : HIRES_FOR ---
@@ -421,6 +590,38 @@ export const companyHiresForRole: [string, string][] = [
   ["company_spotify", "role_backend_engineer"],
   ["company_spotify", "role_frontend_engineer"],
   ["company_spotify", "role_data_engineer"],
+
+  ["company_meta", "role_backend_engineer"],
+  ["company_meta", "role_ml_engineer"],
+  ["company_meta", "role_engineering_manager"],
+
+  ["company_apple", "role_mobile_engineer"],
+  ["company_apple", "role_software_engineer"],
+  ["company_apple", "role_security_engineer"],
+
+  ["company_salesforce", "role_fullstack_developer"],
+  ["company_salesforce", "role_solutions_architect"],
+  ["company_salesforce", "role_product_engineer"],
+
+  ["company_shopify", "role_backend_engineer"],
+  ["company_shopify", "role_frontend_engineer"],
+  ["company_shopify", "role_product_engineer"],
+
+  ["company_airbnb", "role_fullstack_developer"],
+  ["company_airbnb", "role_data_scientist"],
+  ["company_airbnb", "role_sre"],
+
+  ["company_linkedin", "role_backend_engineer"],
+  ["company_linkedin", "role_data_engineer"],
+  ["company_linkedin", "role_ml_engineer"],
+
+  ["company_twilio", "role_backend_engineer"],
+  ["company_twilio", "role_solutions_architect"],
+  ["company_twilio", "role_technical_writer"],
+
+  ["company_snowflake", "role_data_engineer"],
+  ["company_snowflake", "role_data_scientist"],
+  ["company_snowflake", "role_cloud_engineer"],
 ];
 
 // --- Company -> Technology : USES ---
@@ -464,6 +665,36 @@ export const companyUsesTechnology: [string, string][] = [
   ["company_spotify", "tech_gcp"],
   ["company_spotify", "tech_kafka"],
   ["company_spotify", "tech_postgresql"],
+
+  ["company_meta", "tech_react"],
+  ["company_meta", "tech_pytorch"],
+  ["company_meta", "tech_kubernetes"],
+
+  ["company_apple", "tech_swift"],
+  ["company_apple", "tech_kubernetes"],
+
+  ["company_salesforce", "tech_postgresql"],
+  ["company_salesforce", "tech_aws"],
+  ["company_salesforce", "tech_grpc"],
+
+  ["company_shopify", "tech_react"],
+  ["company_shopify", "tech_kubernetes"],
+  ["company_shopify", "tech_mysql"],
+
+  ["company_airbnb", "tech_react"],
+  ["company_airbnb", "tech_aws"],
+  ["company_airbnb", "tech_kafka"],
+
+  ["company_linkedin", "tech_kafka"],
+  ["company_linkedin", "tech_kubernetes"],
+
+  ["company_twilio", "tech_aws"],
+  ["company_twilio", "tech_aws_lambda"],
+  ["company_twilio", "tech_grpc"],
+
+  ["company_snowflake", "tech_aws"],
+  ["company_snowflake", "tech_gcp"],
+  ["company_snowflake", "tech_azure"],
 ];
 
 // --- Resource -> Skill : TEACHES ---
@@ -488,6 +719,11 @@ export const resourceTeachesSkill: [string, string][] = [
   ["resource_testing_library_docs", "skill_automated_testing"],
   ["resource_web_dev_a11y", "skill_accessibility"],
   ["resource_freecodecamp_python", "skill_python"],
+
+  ["resource_ml_coursera", "skill_ml_fundamentals"],
+  ["resource_ml_coursera", "skill_statistics_probability"],
+  ["resource_scrum_guide", "skill_agile_scrum"],
+  ["resource_nn_group_ux", "skill_ui_ux_principles"],
 ];
 
 // --- Resource -> Technology : TEACHES_TECHNOLOGY ---
@@ -503,4 +739,14 @@ export const resourceTeachesTechnology: [string, string][] = [
   ["resource_kafka_docs", "tech_kafka"],
   ["resource_prometheus_docs", "tech_prometheus"],
   ["resource_grafana_docs", "tech_grafana"],
+
+  ["resource_apple_dev_docs", "tech_swift"],
+  ["resource_android_dev_docs", "tech_kotlin"],
+  ["resource_flutter_docs", "tech_flutter"],
+  ["resource_tensorflow_docs", "tech_tensorflow"],
+  ["resource_pytorch_docs", "tech_pytorch"],
+  ["resource_cypress_docs", "tech_cypress"],
+  ["resource_playwright_docs", "tech_playwright"],
+  ["resource_aws_lambda_docs", "tech_aws_lambda"],
+  ["resource_grpc_docs", "tech_grpc"],
 ];

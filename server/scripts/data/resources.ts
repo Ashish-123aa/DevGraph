@@ -35,4 +35,17 @@ export const resources: ResourceSeed[] = [
   { id: "resource_prometheus_docs", title: "Prometheus Official Documentation", type: "Documentation", url: "https://prometheus.io/docs/introduction/overview/", description: "The official guide to Prometheus metrics and alerting." },
   { id: "resource_grafana_docs", title: "Grafana Documentation", type: "Documentation", url: "https://grafana.com/docs/", description: "The official documentation for building Grafana dashboards." },
   { id: "resource_freecodecamp_python", title: "freeCodeCamp: Scientific Computing with Python", type: "Course", url: "https://www.freecodecamp.org/learn/scientific-computing-with-python/", description: "A free, project-based introduction to Python." },
+
+  { id: "resource_apple_dev_docs", title: "Apple Developer Documentation", type: "Documentation", url: "https://developer.apple.com/documentation/", description: "The official reference for building iOS and macOS applications." },
+  { id: "resource_android_dev_docs", title: "Android Developers Documentation", type: "Documentation", url: "https://developer.android.com/docs", description: "The official guide to building Android applications." },
+  { id: "resource_flutter_docs", title: "Flutter Official Documentation", type: "Documentation", url: "https://docs.flutter.dev/", description: "The official guide to building apps with Flutter." },
+  { id: "resource_tensorflow_docs", title: "TensorFlow Official Documentation", type: "Documentation", url: "https://www.tensorflow.org/learn", description: "Official guides and tutorials for TensorFlow." },
+  { id: "resource_pytorch_docs", title: "PyTorch Official Tutorials", type: "Documentation", url: "https://pytorch.org/tutorials/", description: "Official tutorials for building models with PyTorch." },
+  { id: "resource_ml_coursera", title: "Machine Learning Specialization", type: "Course", url: "https://www.coursera.org/specializations/machine-learning-introduction", description: "Andrew Ng's widely used introduction to machine learning." },
+  { id: "resource_cypress_docs", title: "Cypress Official Documentation", type: "Documentation", url: "https://docs.cypress.io/", description: "The official guide to end-to-end testing with Cypress." },
+  { id: "resource_playwright_docs", title: "Playwright Official Documentation", type: "Documentation", url: "https://playwright.dev/docs/intro", description: "The official guide to cross-browser testing with Playwright." },
+  { id: "resource_aws_lambda_docs", title: "AWS Lambda Developer Guide", type: "Documentation", url: "https://docs.aws.amazon.com/lambda/", description: "The official guide to building serverless applications with AWS Lambda." },
+  { id: "resource_grpc_docs", title: "gRPC Official Documentation", type: "Documentation", url: "https://grpc.io/docs/", description: "The official guide to building services with gRPC." },
+  { id: "resource_nn_group_ux", title: "Nielsen Norman Group Articles", type: "Documentation", url: "https://www.nngroup.com/articles/", description: "Widely cited, research-backed articles on UX design principles." },
+  { id: "resource_scrum_guide", title: "The Scrum Guide", type: "Documentation", url: "https://scrumguides.org/", description: "The official definition of Scrum from its creators." },
 ];
